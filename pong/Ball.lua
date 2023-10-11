@@ -5,7 +5,7 @@ function Ball:create()
     local ball = {}
     setmetatable(ball, Ball)
     ballImage = love.graphics.newImage("img/ball.png")
-    ball.size = 15
+    ball.size = ballImage:getHeight()
     ball.location = { x = screenWidth / 2, y = screenHeight / 2 }
     ball.direction = {x = velocity, y = 0}
 
@@ -30,7 +30,7 @@ function Ball:checkBoundaries()
     elseif self.location.y <=  marginUpDown then
         self.direction.y = math.abs(self.direction.y)
         return "UpperBoundary"
-    elseif self.location.y >= screenHeight - marginUpDown - self.size * 2 then
+    elseif self.location.y >= screenHeight - marginUpDown - self.size then
         self.direction.y = -math.abs(self.direction.y)
         return "LowerBoundary"
     end
@@ -43,8 +43,8 @@ function Ball:update(dt)
 end
 
 function Ball:checkPaddle(paddle)
-    if self.location.y <= paddle.y + paddle.height and self.location.y + self.size * 2 >= paddle.y and
-        self.location.x  <= paddle.x + paddle.width  and self.location.x + self.size * 2 >= paddle.x - paddle.width / 2
+    if self.location.y <= paddle.y + paddle.height and self.location.y + self.size >= paddle.y and
+        self.location.x <= paddle.x + paddle.width  and self.location.x + self.size >= paddle.x 
     then
         return true
     end
