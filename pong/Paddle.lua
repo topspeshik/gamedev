@@ -48,5 +48,8 @@ function Paddle:draw()
     elseif self.side == "right" then
         love.graphics.draw(paddleImageRight, self.x, self.y)
     end
+end
 
+function Paddle:startPosition()
+    self.location = screenHeight / 2 - self.height / 2
 end

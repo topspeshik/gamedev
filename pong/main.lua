@@ -4,8 +4,15 @@ require "Ball"
 function love.load()
     
     backgroundImage = love.graphics.newImage("img/stsena_dlya_igry.png")
-    screenWidth = backgroundImage:getWidth()
-    screenHeight = backgroundImage:getHeight()
+    startImage = love.graphics.newImage("img/startImage.png")
+    buttonStart = love.graphics.newImage("img/startPlay.png")
+    buttonExit = love.graphics.newImage("img/exit.png")
+    pongImage = love.graphics.newImage("img/Pong.png")
+    backgroundEnd = love.graphics.newImage("img/backEnd.png")
+    buttonImage = love.graphics.newImage("img/button.png")
+
+
+    screenWidth, screenHeight = love.window.getDesktopDimensions()
 
     marginSide = screenWidth * 0.075
     marginUpDown = screenWidth * 0.06
@@ -53,14 +60,14 @@ function love.update(dt)
     local border = ball:checkBoundaries()
     if border == "RightBoundary" then
         paddleLeft.score = paddleLeft.score + 1
-        if paddleLeft.score == 5 then
+        if paddleLeft.score == 1 then
             gameScreen = false
             endScreen = true
             winnerScreen = "left"
         end
     elseif border == "LeftBoundary" then
         paddleRight.score = paddleRight.score + 1
-        if paddleRight.score == 5 then
+        if paddleRight.score == 1 then
             gameScreen = false
             endScreen = true
             winnerScreen = "right"
@@ -99,23 +106,60 @@ function love.draw()
         paddleRight:draw()
         ball:draw()
     elseif endScreen then
-        if winnerScreen == "right" then
-            love.graphics.print(
-                "Right player win", 
-                screenWidth / 2, 
-                screenHeight / 2
-            )
-            paddleLeft.score = 0
-            paddleRight.score = 0
-        elseif winnerScreen == "left" then
-            love.graphics.print(
-                "Left player win", 
-                screenWidth / 2, 
-                screenHeight / 2
-            )
-            paddleLeft.score = 0
-            paddleRight.score = 0
-        end
+        love.graphics.draw(backgroundImage, 0, 0)
+        paddleLeft:startPosition()
+        paddleRight:startPosition()
+        paddleLeft:draw()
+        paddleRight:draw()
+        backgroundEndX = (screenWidth - backgroundEnd:getWidth()) / 2
+        backgroundEndY = (screenHeight - backgroundEnd:getHeight()) / 2
+        love.graphics.draw(backgroundEnd, backgroundEndX, backgroundEndY)
+        local fontSize = 40
+        local font = love.graphics.newFont(fontSize)
+        love.graphics.setFont(font)
+        local textScore = "Score"
+        local textPlayer = "Player 1"
+        local textPlayer2 = "Player 2"
+        local textWidthScore = font:getWidth(textScore)
+        local textWidthPlayer = font:getWidth(textPlayer)
+        local textHeight = font:getHeight()
+        love.graphics.print(textScore, (screenWidth - textWidthScore) / 2, backgroundEndY*1.1)
+        love.graphics.print(textPlayer, ((screenWidth - textWidthPlayer) / 2)*0.75, backgroundEndY*1.2)
+        love.graphics.print(textPlayer2, ((screenWidth - textWidthPlayer) / 2)*1.25, backgroundEndY*1.2)
+
+        local textWidthScoreLeft = font:getWidth(paddleLeft.score)
+        local textWidthScoreRight = font:getWidth(paddleRight.score)
+
+        love.graphics.print(paddleLeft.score, ((screenWidth - textWidthScoreLeft) / 2)*1.25, backgroundEndY*1.5)
+        love.graphics.print(paddleRight.score, ((screenWidth - textWidthScoreRight) / 2)*0.75, backgroundEndY*1.5)
+
+
+        local buttonRightWidth = ((screenWidth - buttonImage:getWidth()) / 2)*1.25
+        local buttonRightHeight = backgroundEndY*1.9
+        love.graphics.draw(buttonImage, buttonRightWidth, buttonRightHeight)
+        love.graphics.draw(buttonImage, ((screenWidth - buttonImage:getWidth()) / 2)*0.75, backgroundEndY*1.9)
+
+        local textExit = "Exit"
+        local textWidthScore = font:getWidth(textExit)
+        love.graphics.print(textExit, buttonRightWidth + (buttonImage:getWidth() - textWidthScore) / 2, buttonRightHeight + (buttonImage:getHeight() - textHeight) / 2)
+
+        -- if winnerScreen == "right" then
+        --     love.graphics.print(
+        --         "Right player win", 
+        --         screenWidth / 2, 
+        --         screenHeight / 2
+        --     )
+        --     paddleLeft.score = 0
+        --     paddleRight.score = 0
+        -- elseif winnerScreen == "left" then
+        --     love.graphics.print(
+        --         "Left player win", 
+        --         screenWidth / 2, 
+        --         screenHeight / 2
+        --     )
+        --     paddleLeft.score = 0
+        --     paddleRight.score = 0
+        -- end
     end     
 end
 
