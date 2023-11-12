@@ -16,9 +16,10 @@ function love.load()
     repeller = Repeller:create(width / 2 + 100, height / 2 + 150)
     
     rectangles = {
-        Rectangle:create(Vector:create(150, 200), 50, 100),
-        Rectangle:create(Vector:create(300, 250), 25, 75),
-        Rectangle:create(Vector:create(400, 300), 100, 25)
+        Rectangle:create(Vector:create(100, 100), 20, 40),
+        Rectangle:create(Vector:create(200, 350), 25, 50),
+        Rectangle:create(Vector:create(450, 400), 50, 100),
+        Rectangle:create(Vector:create(350, 400), 10, 25)
     }
     
     ps = ParticleSystem:create(Particle)
