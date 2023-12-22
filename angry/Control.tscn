@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://assets/backgroundMenu.png" type="Texture" id=2]
+[ext_resource path="res://assets/Arimo-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/Score.png" type="Texture" id=4]
+[ext_resource path="res://assets/exit.png" type="Texture" id=5]
+[ext_resource path="res://assets/again.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" groups=["ControlScore"]]
+script = ExtResource( 1 )
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -214.0
+margin_top = -137.5
+margin_right = 214.0
+margin_bottom = 137.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backgroundMenu" type="TextureRect" parent="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -217.0
+margin_top = -138.0
+margin_right = 1164.0
+margin_bottom = 622.0
+rect_scale = Vector2( 0.317248, 0.387536 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreEditText" type="RichTextLabel" parent="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -20.0
+margin_right = 62.0
+margin_bottom = 26.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="TextureRect" parent="Popup"]
+margin_left = 101.0
+margin_top = 53.5
+margin_right = 646.0
+margin_bottom = 135.5
+rect_scale = Vector2( 0.427288, 0.533186 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AgainButton" type="TextureButton" parent="Popup"]
+margin_left = 18.0
+margin_top = 210.5
+margin_right = 504.0
+margin_bottom = 347.5
+rect_scale = Vector2( 0.392816, 0.459192 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="TextureButton" parent="Popup"]
+margin_left = 220.0
+margin_top = 210.5
+margin_right = 705.0
+margin_bottom = 347.5
+rect_scale = Vector2( 0.387434, 0.47493 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="Popup/AgainButton" to="." method="_on_AgainButton_button_down"]
+[connection signal="button_down" from="Popup/ExitButton" to="." method="_on_ExitButton_button_down"]

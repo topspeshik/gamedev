@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Angry_Birds.png" type="Texture" id=1]
+[ext_resource path="res://assets/exitButton.png" type="Texture" id=2]
+[ext_resource path="res://assets/Background.png" type="Texture" id=3]
+[ext_resource path="res://assets/startGame.png" type="Texture" id=4]
+[ext_resource path="res://StartButton.gd" type="Script" id=5]
+
+[node name="StartGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+rect_scale = Vector2( 0.453218, 0.571019 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 2.20644
+margin_top = 10.5075
+margin_right = 2251.21
+margin_bottom = 1090.51
+rect_scale = Vector2( 1.00223, 0.961244 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TextureButton" parent="."]
+margin_left = 829.622
+margin_top = 516.62
+margin_right = 1417.62
+margin_bottom = 642.62
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="TextureButton" parent="."]
+margin_left = 946.564
+margin_top = 682.989
+margin_right = 1248.56
+margin_bottom = 800.989
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AngryBirdsLabel" type="TextureRect" parent="."]
+margin_left = 607.0
+margin_top = 159.0
+margin_right = 1543.0
+margin_bottom = 402.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="StartButton" to="StartButton" method="_on_StartButton_button_down"]
+[connection signal="button_down" from="ExitButton" to="StartButton" method="_on_ExitButton_button_down"]
