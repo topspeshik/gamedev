@@ -56,18 +56,19 @@ func _on_TouchArea_input_event(viewport, event, shape_idx):
 
 func on_pulling_event(delta):
 	var player = get_tree().get_nodes_in_group("Player")[0]
-	
 	var location = get_global_mouse_position()
 	if location.distance_to($CenterOfSlingshot.position) > 100:
 		location = (location - $CenterOfSlingshot.position).normalized() * 100 + $CenterOfSlingshot.position
 	var velocity = centerOfSlingshot - location
 	if Input.is_action_pressed("left_mouse"):
+
 		player.position = location
 		leftLine.points[1] = location
 		rightLine.points[1] = location
 		trajectory(location, delta)
 	else:
 		$Trajectory.clear_points()
+		Sound.playShotSound()
 		var distance = location.distance_to(centerOfSlingshot)
 		player.ThrowBird()
 		player = player as RigidBody2D

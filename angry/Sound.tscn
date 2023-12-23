@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/3_Звук разрушения дерева/bce0a3a4f2e8122.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Sound.gd" type="Script" id=2]
+[ext_resource path="res://assets/фоновая музыка/znm1.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/2_Звук разрушения камня/sound_16549.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/0_Натяжение рогатки/bow-string-releasing-slow-2.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/1_Звук выстрела/2e831775b471b67.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/4_Звук победы/f3f0ad4c9d807a8.mp3" type="AudioStream" id=7]
+
+[node name="Sound" type="Node"]
+script = ExtResource( 2 )
+
+[node name="WoodSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="StoneSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="SlingshotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )

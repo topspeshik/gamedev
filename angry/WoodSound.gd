@@ -2,5 +2,8 @@ extends Node
 
 
 
-func playSound():
+func playWood():
 	$WoodSound.play()
+	
+func playBackground():
+	$Bac.play()

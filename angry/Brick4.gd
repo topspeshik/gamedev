@@ -6,7 +6,7 @@ extends RigidBody2D
 # var b = "text"
 
 
-var health = 15
+var health = 50
 func _ready():
 	var t = Timer.new()
 	t.set_wait_time(5)
@@ -24,6 +24,6 @@ func _on_RigidBody2D_body_entered(body):
 			health -= damage
 			GameManager.score +=damage
 			if(health <= 0):
-		
+				Sound.playWood()
 				queue_free()
 

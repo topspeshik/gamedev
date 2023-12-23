@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2e831775b471b67.mp3-2f616aa6925365003e32969684fbb5d7.mp3str"
+
+[deps]
+
+source_file="res://assets/1_Звук выстрела/2e831775b471b67.mp3"
+dest_files=[ "res://.import/2e831775b471b67.mp3-2f616aa6925365003e32969684fbb5d7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

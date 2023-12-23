@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sound_16549.mp3-af7e0f42107bad3faa8bc4b492428cfb.mp3str"
+
+[deps]
+
+source_file="res://assets/2_Звук разрушения камня/sound_16549.mp3"
+dest_files=[ "res://.import/sound_16549.mp3-af7e0f42107bad3faa8bc4b492428cfb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

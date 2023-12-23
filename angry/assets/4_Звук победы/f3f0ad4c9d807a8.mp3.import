@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/f3f0ad4c9d807a8.mp3-1ea4bfbe0c519c9eb1a19379796ab578.mp3str"
+
+[deps]
+
+source_file="res://assets/4_Звук победы/f3f0ad4c9d807a8.mp3"
+dest_files=[ "res://.import/f3f0ad4c9d807a8.mp3-1ea4bfbe0c519c9eb1a19379796ab578.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

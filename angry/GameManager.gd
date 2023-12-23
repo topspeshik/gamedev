@@ -14,7 +14,7 @@ var score = 0
 var deleteWood = false
 
 func _ready():
-	pass
+	Sound.playBack()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,9 +25,11 @@ func _process(delta):
 		GameState.Play:
 			var birds = get_tree().get_nodes_in_group("Bird")
 			var pigs = get_tree().get_nodes_in_group("Enemy")
-			if pigs.size() <= 0:
+			if pigs.size()  <= 0:
+				Sound.playWinSound()
 				CurrentGameState = GameState.End
 			elif birds.size() <= 0:
+				Sound.playWinSound()
 				CurrentGameState = GameState.End
 			pass
 		GameState.End:

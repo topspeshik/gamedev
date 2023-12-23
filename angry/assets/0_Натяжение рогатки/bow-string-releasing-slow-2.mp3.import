@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bow-string-releasing-slow-2.mp3-c127f75316c63f7ecc837408bdd275d1.mp3str"
+
+[deps]
+
+source_file="res://assets/0_Натяжение рогатки/bow-string-releasing-slow-2.mp3"
+dest_files=[ "res://.import/bow-string-releasing-slow-2.mp3-c127f75316c63f7ecc837408bdd275d1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

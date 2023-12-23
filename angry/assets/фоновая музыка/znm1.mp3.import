@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/znm1.mp3-e3bfb11f978e704d93512b61d5c03018.mp3str"
+
+[deps]
+
+source_file="res://assets/фоновая музыка/znm1.mp3"
+dest_files=[ "res://.import/znm1.mp3-e3bfb11f978e704d93512b61d5c03018.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -24,6 +24,6 @@ func _on_RigidBody2D_body_entered(body):
 			health -= damage
 			GameManager.score +=damage
 			if(health <= 0):
-				WoodSound.playSound()	
+				Sound.playWood()
 				queue_free()
 

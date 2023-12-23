@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bce0a3a4f2e8122.mp3-89d717d285c31490ebd5d3360db30e4f.mp3str"
+
+[deps]
+
+source_file="res://assets/3_Звук разрушения дерева/bce0a3a4f2e8122.mp3"
+dest_files=[ "res://.import/bce0a3a4f2e8122.mp3-89d717d285c31490ebd5d3360db30e4f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
